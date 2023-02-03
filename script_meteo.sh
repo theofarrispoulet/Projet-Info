@@ -344,32 +344,32 @@ Tris_Dates () {
 	#LA FONCTION "Options_Lieux" PERMET DE SELECTIONNER LE LIEU QUE L'UTILISATEUR A ENTRÉ EN ARGUMENT#
 Options_Lieux () {
 	#LES OTPIONS DE LIEUX#
-	if [[ $test = "-F" ]]; then
+	if [[ $test = "-F" ]]; then #Restriction du lieu à la France et la Corse.
 		cat $file | grep -e "^07..." > lieu.csv
 		echo -e "\033[32mLe lieu à bien été enregistré. \033[0m"
 		Tris_Modes $@ #On appelle la fonction avec commme argument, les arguments entrés par l'utilisateur.
-	elif [[ $test = "-G" ]]; then
+	elif [[ $test = "-G" ]]; then #Restriction du lieu à la Guyane française.
 		cat $file | grep -e "^814.." > lieu.csv
 		echo -e "\033[32mLe lieu à bien été enregistré. \033[0m"
 		Tris_Modes $@
-	elif [[ $test = "-S" ]]; then
+	elif [[ $test = "-S" ]]; then #Restriction du lieu à St Pierre et Miquelon.
 		cat $file | grep -e "^71805" > lieu.csv
 		echo -e "\033[32mLe lieu à bien été enregistré. \033[0m"
 		Tris_Modes $@
-	elif [[ $test = "-A" ]]; then
+	elif [[ $test = "-A" ]]; then #Restriction du lieu aux Antilles.
 		cat $file | grep -e "^78890" -e "^78897" -e "^78894" -e "^78922" -e "^78995" > lieu.csv
 		echo -e "\033[32mLe lieu à bien été enregistré. \033[0m"
 		Tris_Modes $@
-	elif [[ $test = "-O" ]]; then
+	elif [[ $test = "-O" ]]; then #Restriction du lieu à l'Océan Indien.
 		cat $file | grep -e "^61980" -e "^67005" > lieu.csv
 		echo -e "\033[32mLe lieu à bien été enregistré. \033[0m"
 		Tris_Modes $@
-	elif [[ $test = "-Q" ]]; then
+	elif [[ $test = "-Q" ]]; then #Restriction du lieu à l'Antarctique.
 		cat $file | grep -e "^6197." -e "^6199." > lieu.csv
 		echo -e "\033[32mLe lieu à bien été enregistré. \033[0m"
 		Tris_Modes $@
 	else
-		cp $file lieu.csv
+		cp $file lieu.csv #Pas de restriction de lieu.
 		echo -e "\033[32mLe lieu à bien été enregistré. \033[0m"
 		Tris_Modes $@
 		#Tris_Dates $@
