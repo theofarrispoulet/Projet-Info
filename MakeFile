@@ -1,0 +1,16 @@
+all: exe
+
+exe: code_ABR.o code_AVL.o code_Tab.o main.o
+	gcc code_ABR.o code_AVL.o code_Tab.o main.o -o exe
+
+code_ABR.o: code_ABR.o header.h
+    gcc -c code_ABR.c -o code_ABR.o
+
+code_AVL.o: code_AVL.o header.h
+    gcc -c code_AVL.c -o code_AVL.o
+
+code_Tab.o: code_Tab.o header.h
+    gcc -c code_Tab.c -o ccode_Tab.o
+
+main.o: main.c header.h
+    gcc -c main.c -o main.o
