@@ -427,10 +427,11 @@ Option_Verification () {
 			arg2=$(( arg2+1 ))
 			test2=1
 			if [[ ${!arg2} =~ ^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$ ]]; then
+				date_min=${!arg2}
 				arg2=$(( arg2+1 ))
 				test2=1
 				if [[ ${!arg2} =~ ^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$ ]]; then
-					echo -e "\033[32mLa syntaxe de la date est bonne. \033[0m"
+					date_max=${!arg2}
 				else
 					echo -e "\033[31mErreur! La date n'est pas valide. Veuillez réessayer. \033[0m"
 					exit 1 #On quitte le programme.
@@ -440,6 +441,12 @@ Option_Verification () {
 				exit 1 #On quitte le programme.
 			fi
 			test2=$arg2
+			if [[ $date_min > $date_max ]]; then
+				echo -e "\033[31mErreur! La date minimale ne peut pas être plus grande que la date maximale. Veuillez réessayer. \033[0m"
+				exit 1 #On quitte le programme.
+			else
+				echo -e "\033[32mLa syntaxe de la date est valide. \033[0m"
+			fi
 		fi
 	done
 	Tris_Lieux $file $@  #On appelle la fonction avec commme argument, les arguments entrés par l'utilisateur.
