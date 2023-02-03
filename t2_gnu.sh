@@ -11,4 +11,4 @@ set ylabel "Température moyenne" #On définie "Température moyenne" comme nom 
 set ylabel  font ",10" #On met la taille de la police à 10.
 Shadecolor_a = "#ff0000" #On déclare une variable contenant la couleur rouge.
 set datafile separator ';' #On indique que le séparateur dans le fichier qui sera lu est ";".
-plot 'temp2_4.csv' using 1:2 with linespoint lw 4 lc rgb Shadecolor_a title "Température en fonction du temps" #on utilise le dossier "temp2_4.csv" pour créer une courbe : avec la température en fonction du temps en rouge, qui utilisera des courbes à l'aide des colonnes 1 et 2 du fichier.
+plot 'temp2_3.csv' using 1:2 with linespoint lw 4 lc rgb Shadecolor_a title "Température en fonction du temps" #on utilise le dossier "temp2_3.csv" pour créer une courbe : avec la température en fonction du temps en rouge, qui utilisera des courbes à l'aide des colonnes 1 et 2 du fichier.

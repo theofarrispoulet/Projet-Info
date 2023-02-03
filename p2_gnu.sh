@@ -11,4 +11,4 @@ set ylabel "Pression moyenne" #On définie "Pression moyenne" comme nom de l'axe
 set ylabel  font ",10" #On met la taille de la police à 10.
 Shadecolor_a = "#006600" #On déclare une variable contenant la couleur vert foncé.
 set datafile separator ';' #On indique que le séparateur dans le fichier qui sera lu est ";".
-plot 'pression2_4.csv' using 1:2 with linespoint lw 4 lc rgb Shadecolor_a title "Pression en fonction du temps" #on utilise le dossier "pression2_4.csv" pour créer une courbe : avec la pression en fonction du temps en vert foncé, qui utilisera des courbes à l'aide des colonnes 1 et 2 du fichier.
+plot 'pression2_3.csv' using 1:2 with linespoint lw 4 lc rgb Shadecolor_a title "Pression en fonction du temps" #on utilise le dossier "pression2_3.csv" pour créer une courbe : avec la pression en fonction du temps en vert foncé, qui utilisera des courbes à l'aide des colonnes 1 et 2 du fichier.
